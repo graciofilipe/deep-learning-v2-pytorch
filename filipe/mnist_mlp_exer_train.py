@@ -8,7 +8,6 @@ from torch.utils.data.sampler import SubsetRandomSampler
 import torch.nn as nn
 import torch.nn.functional as F
 
-
 num_workers = 0
 batch_size = 20
 valid_size = 0.2
@@ -66,6 +65,7 @@ class Net(nn.Module):
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
 
+
         return x
 
 # initialize the NN
@@ -76,7 +76,7 @@ print(model)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
-n_epochs = 5
+n_epochs = 11
 
 # initialize tracker for minimum validation loss
 valid_loss_min = np.Inf # set initial "min" to infinity
